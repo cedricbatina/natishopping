@@ -24,8 +24,195 @@ a {
 }
 a:hover {
  text-decoration: none;
- a:visited {
+ 
+}
+a:visited {
   color: inherit;
   
  }
+ img {
+  border: none;
+
+ }
+ input, select {
+ margin: 10px 0;
+ 
+ }
+ label { line-height: 30px;}
+ label.error {
+  font-size: smaller;
+  line-height: 20px;
+  font-size: italic;
+ }
+
+/* les classes */
+ .fonce {background-color: #93fd95;}
+ .fond { background-color: #e1fd92;}
+ .bulle {
+  font-weight: bold;
+  padding: 5px;
+  color: inherit;
+  display: inline;
+  border-radius: 4px;
+ }
+
+ .margeH { margin: 0 30 px;}
+ .petitTexte { font-size: small;}
+ .tresPetitTexte { font-size: xx-small;}
+ .enTete {
+  background-color: #e1fd92;
+  height: 30px;
+ }
+ .erreur {
+  color: #c00;
+  font-style: italic;
+ }
+.teteTable {
+ font-weight: bold;
+ background-color: #e1fd92;
 }
+.enTete {
+ width: 850px;
+ height: 150px;
+}
+.margeHorizontale { margin-left: 28px; margin-right: 5px;}
+.terminer {
+ float: right;
+
+}
+.WidgetTete {
+ width: 180px;
+ margin-left: 20px;
+ margin-top: 20px;
+ font-size: small;
+ float: left;
+ line-height: 25px;
+}
+.BoiteCategorie {
+ height: 176px;
+ width: 212px;
+ float: inherit;
+ margin-left: 142px;
+ margin-bottom: 20px;
+
+}
+.BoiteCategorie a {
+ text-decoration: none;
+}
+.ImageCategorie {
+ padding: 1px;
+ border: solid 1px #555;
+}
+.BoutonCategorie {
+ margin: 15px 15px;
+ padding: 10px;
+ border-radius: 4px;
+}
+.TexteCategorie {line-height: 25px; font-size: x-large;}
+.champSaisie { width: 190px; }
+.colonneEnregistrementPrix {width: 80px; font-weight: bold;}
+.total { border-top: 1px solid #444;}
+.indent {margin-left: 6em;}
+.colonneResume {
+ margin-top: 15px;
+ width: 50%;
+ float: left;
+}
+.TableDetails {text-align: left;}
+.TableDetails th { padding: 5px 10px;}
+.TableDetails td { 
+ padding: 5px 10px 5px 20px;
+
+}
+.colonneQuantite {
+ text-align: center;
+ width: 62px;
+}
+.colonneConfirmation {
+ width: 90px;
+ font-weight: normal;
+}
+
+/* les id*/
+ #principale { background: #e1fd92;}
+ #colonneUnique { margin: 20px 30px; text-align: left;}
+#logo { float: center; margin-top: 10px;}
+#BarreWidgets { height: 50px; width: 850px;}
+#panier {position : absolute; margin: 5px 0 0 2px; }
+#vuePanier { text-align: left; width: 180px;}
+#pied { height: 60px;width: 350px;clear: left;}
+#textePied {
+ text-align: left;
+ margin-top: 10px;
+}
+#dividerPied { width: 300px; margin: 0 0;}
+#haut {text-align: center; height: 100px; width: 850px; float: left;}
+#bas { text-align: left; height: 370px; width: 850px; float: left;}
+#bienvenue {line-height: 1.4em; }
+#categoriesHaut {
+ width: 850px;
+ float: left;
+ margin-top: 25px;
+ margin-bottom: 25px;
+}
+#categoriesBas {
+ margin-top: 10px;
+ width: 850px;
+ float: left;
+}
+#categorieChoisie {
+ background-color: #93fd95;
+ margin-left: 10px;
+ width: 139px;
+}
+#tableProduits { width: 800px; position: relative; z-index: 1;}
+#tableProduits td {
+ width: 200px;
+ padding: 5px;
+}
+#BarreActions {
+ margin: 30px;
+ width: 750px;
+ text-align: center;
+}
+#soustotal {
+ margin: 40px 0 20px 360px;
+}
+#TablePanier { width: 190px; height: 90px;}
+#TableEnregistrement { width: 405px; padding: 10px; background-color: #93fd95; float: left; border-radius: 4px;}
+#TableEnregistrement td {vertical-align: top; text-align: right; margin: 5px;}
+#BoiteInfo {padding: 10px 25px 0 460px;}
+#BoitePrix {
+ padding: 10px;
+ border: 1px solid #93fd95;
+ background-color: #93fd95;
+ border-radius: 4px;
+}
+#BoitePrix td {
+ text-align: right;
+ padding: 5px;
+}
+#TexteConfirmation {
+ margin: 0 20px 20px;
+ padding: 10px;
+ background-color: #93fd95;
+ float: left;
+ border-radius: 4px;
+}
+#tableResumeCommande {width: 100%;}
+#TableAdresseLivraison {
+ width: 70%;
+ margin-left: 15%;
+}
+#TableAdresseLivraison {
+ padding-top: 10px; padding-bottom: 10px;
+}
+#fraisDroite {
+ padding: 0 20px;
+}
+#totalCellLeft {
+ text-align: right;
+ padding: 0;
+}
+#totalDroite { padding: 0 20px;}
+#dateTraitement {padding: 2px 0 10px 20px;}
