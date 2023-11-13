@@ -1,0 +1,31 @@
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ width: 850;
+ text-align: center;
+ margin: 20px auto;
+ color: #444;
+}
+hr {
+ border: 0;
+ background-color: #333;
+ height: 1px;
+
+}
+table {
+ margin: 0 20px;
+ border-spacing: 0;
+ text-align: center;
+ border: solid 1px #f5eabe;
+
+}
+a {
+ color: inherit;
+ text-decoration: underline;
+}
+a:hover {
+ text-decoration: none;
+ a:visited {
+  color: inherit;
+  
+ }
+}
