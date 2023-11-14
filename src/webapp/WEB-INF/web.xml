@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmls="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+<description>
+Chemin relatif vers les images des produits</description>
+<param-name>CheminImagesProduits</param-name>
+<param-value>ressources/produits/</param-value>
+</context-param>
+<content-param>
+<description>Chemin relatif vers les images des catégories</description>
+<param-value>ressources/categories</param-value>
+</content-param>
+<description>Frais appliqués à toutes les commandes</description>
+<param-name>frais</param-name>
+<param-value>3.00</param-value>
+</content-param>
+</web-app>
