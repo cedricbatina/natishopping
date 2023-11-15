@@ -10,9 +10,9 @@ public abstract class FacadeAbstraite<T> {
     this.classeEntite = classeEntite;
   }
 
- protected abstract EntityManager getEntityManager();pblic
+  protected abstract EntityManager getEntityManager();
 
-  void create(T entite) {
+  public void create(T entite) {
     getEntityManager().persist(entite);
   }
 
@@ -20,9 +20,9 @@ public abstract class FacadeAbstraite<T> {
     getEntityManager().merge(entite);
   }
 
- public void remove (T entite) {
-  getEntieyManager().remove(getEntityManager().merge(entite))
- }
+  public void remove(T entite) {
+    getEntityManager().remove(getEntityManager().merge(entite));
+  }
 
   public T find(Object id) {
     return getEntityManager().find(classeEntite, id);

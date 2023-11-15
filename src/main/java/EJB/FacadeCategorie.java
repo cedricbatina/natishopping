@@ -4,6 +4,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import Entity.Categorie;
+import Entity.Client;
 
 @Stateless
 public class FacadeCategorie extends FacadeAbstraite<Categorie> {

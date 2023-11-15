@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <persistence-unit name="natishoppingPU" transaction-type="JTA">
+    <jta-data-source>jdbc/bdnatishopping</jta-data-source>
+    <properties>
+      <!-- Propriétés spécifiques à l'implémentation JPA, par exemple, pour EclipseLink -->
+      <property name="eclipselink.logging.level" value="FINEST"/>
+      <!-- Autres propriétés si nécessaire -->
+    </properties>
+  </persistence-unit>
+</persistence>
+
+
+
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/sml/ns/persistence http://jva.sun.com/sml/ns/persistence/persistence_2_0.xsd">
 <
 <persistence-unit name="natishoppingPU" transaction-type="JTA">
@@ -7,4 +24,4 @@
 <property name="eclipselink.logging.level" value="FINEST"/>
 </properties>
 </persistence-unit>
-</persistence>
+</persistence>-->
