@@ -55,8 +55,9 @@ public class Client implements Serializable {
   public Client() {
   }
 
-public Client (Integer id ) {
- this.id = id;
+  public Client(Integer id) {
+    this.id = id;
+  }
 
   public Client(Integer id, String nom, String email, String tel, String addresse, String carte) {
     this.id = id;

@@ -15,5 +15,6 @@ public class FacadeProduit extends FacadeAbstraite<Produit> {
   return em;
  }
 
- public FacadeProduit() { super{Produit.class};}
+ public FacadeProduit() {
+   super Produit.class;}
 }

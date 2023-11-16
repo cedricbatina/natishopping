@@ -17,9 +17,9 @@ public class FacadeCommandeClient extends FacadeAbstraite<CommandeClient> {
   return em;
  }
 
-public FacadeCommandeClient() { 
- super {CommandeClient.class};
-}
+ public FacadeCommandeClient() {
+  super(CommandeClient.class);
+ }
 
  public CommandeClient find(Object id) {
   CommandeClient cde = em.find(CommandeClient.class, id);

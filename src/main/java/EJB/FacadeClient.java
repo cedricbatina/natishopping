@@ -17,5 +17,7 @@ public class FacadeClient extends FacadeAbstraite<Client> {
 
  }
 
- public FacadeClient() {super {Client.class};}
+ public FacadeClient() {
+  super(Client.class);
+ }
 }
