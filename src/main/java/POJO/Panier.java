@@ -26,7 +26,7 @@ public class Panier {
   }
   if (nouveau) {
    ItemPanier item = new ItemPanier(produit);
-   Items.add(item);
+   items.add(item);
   }
  }
 
@@ -38,15 +38,14 @@ public class Panier {
    for (ItemPanier it : items) {
     if (it.getProduit().getId () ==  produit.getId()) {
      if (qt != 0) {
-      if(setQuantite(qt))
+      it.setQuantite(qt);
      }
-     else item = it;
-     break;
+     else {item = it;
+     break;}
     }
    }
-  }
-  if (item != null) {
-   items.remove(item);
+     if (item != null) items.remove(item)
+
   }
  }
 
@@ -56,19 +55,19 @@ public class Panier {
 
  public synchronized int getnbItems() {
   nbItems = 0;
-  for (ItemPanier item : items) {
+  for (ItemPanier scItem : items) {
    nbItems += scItem.getQuantite();
   }
   return nbItems;
  }
 
-public synchronized double getSousTotal () {
- double = montant = 0;
- for (ItemPanier scItem : items) {
-  nbItems += scItem.getQuantite();
+ public synchronized double getSousTotal() {
+  double montant = 0;
+  for (ItemPanier scItem : items) {
+   nbItems += scItem.getQuantite();
+  }
+  return montant;
  }
- return montant;
-}
 
  public synchronized void calculerTotal(String frais) {
   double montant = 0;
@@ -76,10 +75,6 @@ public synchronized double getSousTotal () {
   montant = this.getSousTotal();
   montant += fr;
   total = montant;
- }
-
- public synchronized double getTotal() {
-  return total;
  }
 
  public synchronized double getTotal() {
