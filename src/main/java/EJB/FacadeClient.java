@@ -9,7 +9,7 @@ import Entity.Client;
 
 @Stateless
 public class FacadeClient extends FacadeAbstraite<Client> {
- @PersistenceContext(unitName="natishopping");
+ @PersistenceContext(unitName = "natishopping")
  private EntityManager em;
 
  protected EntityManager getEntityManager() {

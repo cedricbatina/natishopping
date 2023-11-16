@@ -10,20 +10,20 @@ import Entity.ProduitCommande;
 
 @Stateless
 public class FacadeProduitCommande extends FacadeAbstraite<ProduitCommande> {
- @PersistenceContext(unitName = "natishoppingPU")
+  @PersistenceContext(unitName = "natishoppingPU")
 
- private EntityManager em;
+  private EntityManager em;
 
- protected EntityManager getEntityManager() {
-  return em;
- }
+  protected EntityManager getEntityManager() {
+    return em;
+  }
 
- public FacadeCommandeClient () {
-  super(commandeClient.class);
- }
+  public FacadeProduitCommande() {
+    super(ProduitCommande.class);
+  }
 
- public List<ProduitCommande> findByOrderId(Object id) {
-  return em.createNamedQuery("ProduitCommande.findByCustomerOrderId").setParameter("commande_client_id", id)
-    .getResultList();
- }
+  public List<ProduitCommande> findByOrderId(Object id) {
+    return em.createNamedQuery("ProduitCommande.findByCustomerOrderId").setParameter("commande_client_id", id)
+        .getResultList();
+  }
 }

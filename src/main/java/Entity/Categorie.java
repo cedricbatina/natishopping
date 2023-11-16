@@ -53,7 +53,7 @@ public class Categorie implements Serializable {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(Short id) {
     this.id = id;
   }
 

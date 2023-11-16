@@ -29,7 +29,6 @@ import javax.xml.bind.annotation.XmlID;
 
 public class Client implements Serializable {
   private static final long serialVersionUID = 1L;
-  @XmlID
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Basic(optional = false)
   @Column(name = "id")

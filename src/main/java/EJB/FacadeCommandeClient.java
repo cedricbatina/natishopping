@@ -1,8 +1,8 @@
 package EJB;
 
-import javax.annotation.security.RolesAllowed;
+//import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
-import javax.persistence.Entity;
+//import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import Entity.CommandeClient;

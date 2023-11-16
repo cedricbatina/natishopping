@@ -94,20 +94,22 @@ public class GestionnaireCommandes {
 
   }
 
- public Map getDetailsCde(int idCde) {
-  Map cdeMap = new HashMap();
-  CommandeClient cde = facadeCommandeClient.find(idCode);
-  Client client = cde .getClient();
-  List <ProduitCommande> produitsCommandes = facadeProduitCommande.findByOrderId(idCde);
-  List <Produit> produits = new ArrayList<Produit>();
-  for (ProduitCommande op : produitsCommandes) {
-   Produit p = (Produit) facadeProduit.find(op.getProduitCommandePK().getProduitId());
-   produits.add(p);
-   
-  }
-cdeMap.put("commande", cde);
-cdeMap.put("client", client);
-cdeMap.put("produits", produits);
-return cdeMap;
+  public Map<String, Object> getDetailsCde(int idCde) {
+    Map<String, Object> cdeMap = new HashMap<>();
+    CommandeClient cde = facadeCommandeClient.find(idCde);
+    Client client = cde.getClient();
+    List<ProduitCommande> produitsCommandes = facadeProduitCommande.findByOrderId(idCde);
+    List<Produit> produits = new ArrayList<Produit>();
+    for (ProduitCommande op : produitsCommandes) {
+      Produit p = (Produit) facadeProduit.find(op.getProduitCommandePK().getProduitId());
+      produits.add(p);
 
+    }
+    cdeMap.put("commande", cde);
+    cdeMap.put("client", client);
+    cdeMap.put("produitsCommandes", produitsCommandes);
+    cdeMap.put("produits", produits);
+    return cdeMap;
+
+  }
 }

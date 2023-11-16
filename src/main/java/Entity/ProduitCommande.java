@@ -5,7 +5,7 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -31,7 +31,7 @@ public class ProduitCommande implements Serializable {
   protected ProduitCommandePK produitCommandePK;
   @Basic(optional = false)
   @Column(name = "quantite")
-  private short quantite;
+  private Short quantite;
   @JoinColumn(name = "produit_id", referencedColumnName = "id", insertable = false, updatable = false)
   @ManyToOne(optional = false)
   private Produit produit;
@@ -64,7 +64,7 @@ public class ProduitCommande implements Serializable {
     this.produitCommandePK = produitCommandePK;
   }
 
-  public short getQuantite() {
+  public Short getQuantite() {
     return quantite;
   }
 
@@ -96,14 +96,16 @@ public class ProduitCommande implements Serializable {
 
   }
 
- public boolean equals(Object objet) {
-  if (!(objet instanceof ProduitCommande))
-   return false;
-  ProduitCommande pc = (ProduitCommande) objet;
-  if ((this.produitCommandePK == null && pc.produitCommandePK != null) || (!this.produitCommandePK ! null) || (this.produitCommandePK != null && !this.produitCommandePK.equals(pc.produitCommandePK))) return false;
-   return false;
-  return true;
- }
+  public boolean equals(Object objet) {
+    if (!(objet instanceof ProduitCommande))
+      return false;
+    ProduitCommande pc = (ProduitCommande) objet;
+    if ((this.produitCommandePK == null && pc.produitCommandePK != null)
+        || (this.produitCommandePK != null && pc.produitCommandePK != null)
+        || (this.produitCommandePK != null && !this.produitCommandePK.equals(pc.produitCommandePK)))
+      return false;
+    return true;
+  }
 
   public String toString() {
     return "entity.ProduitCommande[produitCommandePK " + produitCommandePK + "]";
