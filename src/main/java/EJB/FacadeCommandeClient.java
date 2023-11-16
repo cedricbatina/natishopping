@@ -2,8 +2,9 @@ package EJB;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
+import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-import javax.persistenc.PersistenceContext;
+import javax.persistence.PersistenceContext;
 import Entity.CommandeClient;
 
 @Stateless
@@ -12,7 +13,7 @@ public class FacadeCommandeClient extends FacadeAbstraite<CommandeClient> {
 
  private EntityManager em;
 
- protected Entity getEntityManager() {
+ protected EntityManager getEntityManager() {
   return em;
  }
 
