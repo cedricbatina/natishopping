@@ -1,6 +1,6 @@
 package Entity;
 
-import java.io.Serializable;;
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -15,7 +15,7 @@ public class ProduitCommandePK implements Serializable {
   @Column(name = "produit_id")
   private int produit_id;
 
-  public int ProduitCommandPK() {
+  public ProduitCommandePK() {
 
   }
 

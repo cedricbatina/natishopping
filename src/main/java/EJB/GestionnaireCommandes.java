@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.Random;
 import javax.annotation.Resource;
 
-import javax.annotation.Resources;
 import javax.ejb.EJB;
 import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
@@ -16,7 +15,6 @@ import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
-import javax.net.ssl.SSLSessionContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import Entity.Produit;
@@ -79,7 +77,7 @@ public class GestionnaireCommandes {
     return cde;
   }
 
-  private void ajouteProduitsCommandes(CommandeClient order, Panier panier) {
+  private void ajouteProduitsCommande(CommandeClient order, Panier panier) {
     em.flush();
     List<ItemPanier> items = panier.getItems();
     for (ItemPanier scItem : items) {

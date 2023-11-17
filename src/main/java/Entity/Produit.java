@@ -131,14 +131,26 @@ public class Produit implements Serializable {
     return hash;
   }
 
+  @Override
   public boolean equals(Object objet) {
     if (!(objet instanceof Produit))
       return false;
     Produit prod = (Produit) objet;
-    if ((this.id == null && !this.id.equals(prod.id)))
+    if (this.id == null || !this.id.equals(prod.id))
       return false;
     return true;
   }
+
+  /*
+   * public boolean equals(Object objet) {
+   * if (!(objet instanceof Produit))
+   * return false;
+   * Produit prod = (Produit) objet;
+   * if ((this.id == null && !this.id.equals(prod.id)))
+   * return false;
+   * return true;
+   * }
+   */
 
   public String toString() {
     return "entity.Produit [ id = " + id + "]";

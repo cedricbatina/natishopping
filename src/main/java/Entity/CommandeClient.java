@@ -135,7 +135,7 @@ public class CommandeClient implements Serializable {
       return false;
     CommandeClient cc = (CommandeClient) objet;
     if ((this.id == null && cc.id != null) || (this.id != null && cc.id != null)
-        || (this.id != null && (this.id.equals(cc.id))))
+        || (this.id != null && (!this.id.equals(cc.id))))
       return false;
     return true;
   }

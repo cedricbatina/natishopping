@@ -1,10 +1,9 @@
 package EJB;
 
-import EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import Entity.Client;
+import Entity.Produit;
 
 @Stateless
 public class FacadeProduit extends FacadeAbstraite<Produit> {
@@ -16,5 +15,6 @@ public class FacadeProduit extends FacadeAbstraite<Produit> {
  }
 
  public FacadeProduit() {
-   super Produit.class;}
+  super(Produit.class);
+ }
 }
