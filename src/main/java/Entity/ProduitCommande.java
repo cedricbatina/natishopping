@@ -44,7 +44,7 @@ public class ProduitCommande implements Serializable {
     this.produitCommandePK = produitCommandePK;
   }
 
-  public ProduitCommande(ProduitCommandePK produitCommandePK, short quantite) {
+  public ProduitCommande(ProduitCommandePK produitCommandePK, Short quantite) {
     this.produitCommandePK = produitCommandePK;
     this.quantite = quantite;
   }
