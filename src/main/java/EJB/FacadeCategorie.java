@@ -7,7 +7,7 @@ import Entity.Categorie;
 
 @Stateless
 public class FacadeCategorie extends FacadeAbstraite<Categorie> {
- @PersistenceContext(unitName = "natishopping")
+ @PersistenceContext(unitName = "natishoppingPU")
  private EntityManager em;
 
  protected EntityManager getEntityManager() {

@@ -8,17 +8,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+//import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlID;
+//import javax.xml.bind.annotation.XmlID;
 
 @Entity
 @Table(name = "client")
-@NamedQueries({ @NamedQuery(name = "Client.findAll", query = "SELECT c FROM c"),
+@NamedQueries({ @NamedQuery(name = "Client.findAll", query = "SELECT c FROM Client c"),
     @NamedQuery(name = "Client.findById", query = "SELECT c FROM Client c WHERE c.id = :id"),
     @NamedQuery(name = "Client.findByName", query = "SELECT c FROM Client  c WHERE c.nom = :nom"),
     @NamedQuery(name = "Client.findByMail", query = "SELECT c FROM Client c WHERE c.email = :email"),

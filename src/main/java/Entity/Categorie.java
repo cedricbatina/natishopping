@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Table(name = "categorie")
 @NamedQueries({
     @NamedQuery(name = "Categorie.findAll", query = "SELECT c FROM Categorie c"),
-    @NamedQuery(name = "Categorie.findById", query = "SELECT c FROM Categorie WHERE c.id = :id"),
+    @NamedQuery(name = "Categorie.findById", query = "SELECT c FROM Categorie c WHERE c.id = :id"),
     @NamedQuery(name = "Categorie.findByName", query = "SELECT c FROM Categorie WHERE c.nom = :nom")
 })
 

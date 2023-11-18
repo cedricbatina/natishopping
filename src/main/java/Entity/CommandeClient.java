@@ -12,7 +12,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+//import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -21,7 +21,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlID;
+//import javax.xml.bind.annotation.XmlID;
 
 @Entity
 @Table(name = "commande_client")
@@ -29,14 +29,10 @@ import javax.xml.bind.annotation.XmlID;
     @NamedQuery(name = "CommandeClient.findAll", query = "SELECT c FROM CommandeClient c"),
     @NamedQuery(name = "CommandeClient.findById", query = "SELECT c FROM CommandeClient c WHERE c.id = :id"),
     @NamedQuery(name = "CommandeClient.findById", query = "SELECT c FROM CommandeClient c "),
-    @NamedQuery(name = "CommandeClient.findByCustomer", query = "SELECT c FROM CommandeClient"
-        + "WHERE c.client = :client"),
-    @NamedQuery(name = "CommandeClient.findByAmount", query = "SELECT c FROM CommandeCLient c"
-        + "WHERE c.amount = :amount"),
-    @NamedQuery(name = "CommandeClient.findByCreated", query = "SELECT c FROM CommandeClient c "
-        + "WHERE c.date_creation = :date_creation"),
-    @NamedQuery(name = "CommandeClient.findByConfirmationNumber", query = "SELECT c FROM CommandeClient c"
-        + "WHERE c.confirmation = :confirmation")
+    @NamedQuery(name = "CommandeClient.findByCustomer", query = "SELECT c FROM CommandeClient c WHERE c.client = :client"),
+    @NamedQuery(name = "CommandeClient.findByAmount", query = "SELECT c FROM CommandeCLient c WHERE c.amount = :amount"),
+    @NamedQuery(name = "CommandeClient.findByCreated", query = "SELECT c FROM CommandeClient c WHERE c.date_creation = :date_creation"),
+    @NamedQuery(name = "CommandeClient.findByConfirmationNumber", query = "SELECT c FROM CommandeClient c WHERE c.confirmation = :confirmation")
 })
 
 public class CommandeClient implements Serializable {

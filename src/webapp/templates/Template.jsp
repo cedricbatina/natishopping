@@ -1,6 +1,6 @@
 <%taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%taglib prefix="fmt" uri="http://java.sun.com/jsjp/jstl/fmt" %>
+<%taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -23,7 +23,7 @@
      <span class="margeHorizontale">
       <c:choose>
        <c:when test="${panier.nbItems == null}" > 0</c:when>
-       <c:otherwise>$ {panier.nbItems} </c:otherwise>
+       <c:otherwise>${panier.nbItems} </c:otherwise>
       </c:choose>
       <c:choose>
        <c:when test="${panier.nbItems >= 1 }">articles</c:when>
@@ -36,7 +36,7 @@
     </div>
     <div class="WidgetTete" id="terminer">
      <c:if test="${!empty panier && panier.nbItems != 0 && !fn contains (pageContext.request.servletPath, '/enregistrement') && requestScope[javax.servlet.forward.servlet_path'] ne '/enregistrement/' && !fn:contains(pageContext.request.servletPath, 'panier') && requestScope['javax.servlet.forward.servlet_path'] ne '/panier' }">
-      <a href="<c:url value='enregistrement'/ " class="bulle" >Terminer les achats</a>
+      <a href="<c:url value='enregistrement'/" class="bulle" >Terminer les achats</a>
      </c:if>
     </div>
    </div>
