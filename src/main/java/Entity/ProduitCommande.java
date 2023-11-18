@@ -16,12 +16,9 @@ import javax.persistence.Table;
 @Table(name = "commande_client_vers_produit")
 @NamedQueries({
     @NamedQuery(name = "ProduitCommande.findAll", query = "SELECT O FROM ProduitCommande o"),
-    @NamedQuery(name = "ProduitCommade.findByCostomerOrderId", query = "SELECT o FROM ProduitCommande o WHERE"
-        + "o.produitCommandePK.commmande_client_id = :commande_client_id"),
-    @NamedQuery(name = "ProduitCommande.findByProductId", query = "SELECT o FROM ProduitCommande o WHERE "
-        + "o.produitCommandePK.produit_id = :produit_id"),
-    @NamedQuery(name = "ProduitCommande.findByQuantity", query = " SELECT o FROM ProduitCommande o WHERE"
-        + "o.quantite = :quantite")
+    @NamedQuery(name = "ProduitCommade.findByCostomerOrderId", query = "SELECT o FROM ProduitCommande o WHERE o.produitCommandePK.commmande_client_id = :commande_client_id"),
+    @NamedQuery(name = "ProduitCommande.findByProductId", query = "SELECT o FROM ProduitCommande o WHERE  o.produitCommandePK.produit_id = :produit_id"),
+    @NamedQuery(name = "ProduitCommande.findByQuantity", query = " SELECT o FROM ProduitCommande o WHERE o.quantite = :quantite")
 
 })
 

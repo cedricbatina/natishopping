@@ -1,107 +1,84 @@
-<%taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
-<%taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8">
-<c:set var="view" value="/enregistrement" scope="session"/>
-<div id="colonneUnique">
- <h2>Enregistrement</h2>
- <p>Pour acheter les articles de votre panier merci de fournir les informations ci-dessous : </p>
- <form action="<c:url value='acheter'/ " id="checkoutForm" method="post">
-  <table id="TableEnregistrement">
-   <c:if test="${!empty validationErr}">
- <tr>
-  <td colspan="2" style="text-align: left;">
-  <span class="erreur petitTexte">Merci de compléter ou corriger :
-   <c:if test="${!empty nomErr}">
-    <br> <span class="indent">- le nom</span>
-   </c:if> 
-  <c:if test="${!empty emailErr}">
-   <br> <span class="indent">- l'adresse mail</span>
-  </c:if> 
- <c:if test="${!empty telErr}"><br> <span class="indent">- le numéro de téléphone</span> </c:if>
-<c:if test="${!empty addressErr}">
- <br> <span class="indent">- l'adresse</span>
-</c:if>
-<c:if test="${!empty carteErr}">
-<br> <span class="indent">- le numéro de la carte bancaire</span>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 
-</c:if>
-</span>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <meta charset="UTF-8">
+    <title>natishopping - ${param.titre}</title>
+    <link rel="stylesheet" type="text/css" href="/src/webapp/natishopping.css">
+    <link rel="shortcut icon" href="/src/main/ressources/images/official_favicon48X48.ico">
+</head>
+<body>
+    <section id="colonneUnique">
+        <article id="texteConfirmation">
+            <strong>Votre commande a été traitée avec succès et sera livrée dans les 24 heures.</strong><br>
+            Merci de noter votre numéro de confirmation: <strong>${commande.confirmation}</strong><br>
+            Contactez Natishopping en cas de difficultés.<br>
+            Merci de votre visite!
+        </article>
 
-  </td>
- </tr>
-  </c:if>
-<tr>
- <td class="champSaisie">
-  <input type="text" size="31" maxlength="45" id="name" name="nom" value="${param.name}">
- </td>
-</tr>
-<tr>
- <td class="">
-  <label for="email">Mail :</label>
- </td>
- <td class="champSaisie">
-  <input type="text " size="31" maxlength="45" id="email" name="email" value="${param.email}">
- </td>
-</tr>
-<tr>
- <td>
-  <label for="phone">Numéro de téléphone</label>
- </td>
- <td class="champSaisie">
-  <input type="text" size="31" maxlength="45" value="${param.phone}">
- </td>
-</tr>
-<tr>
- <td>
-  <label for="address">Adress :</label>
- </td>
-<td>
- <label for="creditcard">Carte de crédit :</label>
-</td>
-<td class="champSaisie">
- <input type="text" size="31" maxlength="19" id="creditcard" name="carte" class="creditcard" value="${param.creditcard}">
+        <div class="colonneResume">
+            <table id="tableResumeCommande" class="TableDetails">
+                <thead>
+                    <tr class="enTete">
+                        <th colspan="3">Résumé de votre commande</th>
+                    </tr>
+                    <tr class="teteTable">
+                        <td>Produit</td>
+                        <td>Quantité</td>
+                        <td>Prix</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="produit" items="${produitsCommandes}" varStatus="iter">
+                        <tr class="${((iter.index % 2) == 0) ? 'fonce' : 'fond'}">
+                            <td>${produits[iter.index].nom}</td>
+                            <td class="colonneQuantite">${produits[iter.index].quantite}</td>
+                            <td class="colonneConfirmationPrix">
+                                <fmt:formatNumber type="currency" currencySymbol="€" value="${produits[iter.index].prix}"/>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    <tr>
+                        <td colspan="2" id="totalCellLeft">
+                            <strong>Total : </strong>
+                        </td>
+                        <td id="totalDroite">
+                            <fmt:formatNumber type="currency" currencySymbol="€" value="${commande.montant}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" id="dateTraitement">
+                            <strong>Date de traitement :</strong>
+                            <fmt:formatDate value="${commande.date_creation}" type="both" dateStyle="short" timeStyle="short"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-</td>
-
-</tr>
-
-<tr>
-<td colspan="2">
- <input type="submit" value="Enregistrer">
-</td>
-
-
-</tr>
-
-
-
-
-  </table>
- </form>
-<div id="BoiteInfo">
- <ul>
-  <li>   Livraison le lendemain garantie.  </li>
-  <li>   Des frais de <fm:formatNumber type="currency" currencySymbl="&euro;" value="${initParam.frais}"> sont appliqués à toutes les commandes</fm:formatNumber>  </li>
- </ul>
- <table id="BoitePrix">
-  <tr>
-   <td>
-    Sous total :
-   </td>
-   <td class="colonneEnregistrementPrix">
-    <fmt:formatNumber type="currency" currencySymbol="&euro;" value="${panier.soustotal}"/>
-   </td>
-  </tr>
-  <tr>
-   <td>Frais :</td>
-   <td class="colonneEnregistrementPrix"><fmt:formatNumber type="currency" currencySymbol="&euro;" value="${initParam.frais}"/> </td>
-  </tr>
-  <tr>
-   <td class="total" >Total :</td>
-   <td class="total colonneEnregistrementPrix" ><fmt:formatNumber type="currency" currencySymbol="&euro;" value="${panier.total}"/> </td>
-  </tr>
- </table>
-</div>
-
-</div>
+        <div class="colonneResume">
+            <table id="TableAdresseLivraison" class="TableDetails">
+                <thead>
+                    <tr class="enTete">
+                        <th colspan="3">Adresse de livraison</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3">
+                            ${client.nom}<br>
+                            ${client.addresse}<hr>
+                            <strong>Mail :</strong> ${client.email}<br>
+                            <strong>Téléphone :</strong> ${client.tel}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>

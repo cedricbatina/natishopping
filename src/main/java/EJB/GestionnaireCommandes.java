@@ -19,10 +19,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import Entity.Produit;
 import Entity.ProduitCommande;
-import Entity.ProduitCommandePK;
+//import Entity.ProduitCommandePK;
 import Entity.Client;
 import Entity.CommandeClient;
-import POJO.ItemPanier;
+//import POJO.ItemPanier;
 import POJO.Panier;
 
 @Stateless
@@ -77,20 +77,23 @@ public class GestionnaireCommandes {
     return cde;
   }
 
-  private void ajouteProduitsCommande(CommandeClient order, Panier panier) {
-    em.flush();
-    List<ItemPanier> items = panier.getItems();
-    for (ItemPanier scItem : items) {
-      int productId = scItem.getProduit().getId();
-      ProduitCommandePK orderedProductPK = new ProduitCommandePK(productId, productId);
-      orderedProductPK.setCommandeClientId(order.getId());
-      orderedProductPK.setProduitId(productId);
-      ProduitCommande orderedItem = new ProduitCommande(orderedProductPK);
-      orderedItem.setQuantite(scItem.getQuantite());
-      em.persist(orderedItem);
-    }
-
-  }
+  /*
+   * private void ajouteProduitsCommande(CommandeClient order, Panier panier) {
+   * em.flush();
+   * List<ItemPanier> items = panier.getItems();
+   * for (ItemPanier scItem : items) {
+   * int productId = scItem.getProduit().getId();
+   * ProduitCommandePK orderedProductPK = new ProduitCommandePK(productId,
+   * productId);
+   * orderedProductPK.setCommandeClientId(order.getId());
+   * orderedProductPK.setProduitId(productId);
+   * ProduitCommande orderedItem = new ProduitCommande(orderedProductPK);
+   * orderedItem.setQuantite(scItem.getQuantite());
+   * em.persist(orderedItem);
+   * }
+   * 
+   * }
+   */
 
   public Map<String, Object> getDetailsCde(int idCde) {
     Map<String, Object> cdeMap = new HashMap<>();
