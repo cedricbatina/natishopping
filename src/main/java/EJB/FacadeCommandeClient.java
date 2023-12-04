@@ -1,10 +1,10 @@
 package EJB;
 
-//import javax.annotation.security.RolesAllowed;
-import javax.ejb.Stateless;
-//import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+//import jakarta.annotation.security.RolesAllowed;
+import jakarta.ejb.Stateless;
+//import jakarta.persistence.Entity;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import Entity.CommandeClient;
 
 @Stateless

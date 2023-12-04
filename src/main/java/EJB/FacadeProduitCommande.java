@@ -1,10 +1,10 @@
 package EJB;
 
 import java.util.List;
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-//import javax.swing.text.html.parser.Entity;
+import jakarta.ejb.Stateless;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+//import jakarta.swing.text.html.parser.Entity;
 
 import Entity.ProduitCommande;
 

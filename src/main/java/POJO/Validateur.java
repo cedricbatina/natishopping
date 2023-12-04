@@ -1,6 +1,6 @@
 package POJO;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 public class Validateur {
   public boolean validerQuantite(String pid, String qt) {

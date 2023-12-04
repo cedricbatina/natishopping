@@ -30,12 +30,12 @@
        <c:otherwise>article</c:otherwise>
       </c:choose>
      </span>
-     <c:if test="${!empty panier && panier.nbItems != 0 && !fn:contains (pageContext.request.servletPath, '/panier') && requestScope[javax.servlet.forward.servlet_path'] ne '/panier' }"> 
+     <c:if test="${!empty panier && panier.nbItems != 0 && !fn:contains (pageContext.request.servletPath, '/panier') && requestScope[jakarta.servlet.forward.servlet_path'] ne '/panier' }"> 
       <a href="<c:url value='enregistrement'/ " class="bulle">Panier</a>
      </c:if>
     </div>
     <div class="WidgetTete" id="terminer">
-     <c:if test="${!empty panier && panier.nbItems != 0 && !fn contains (pageContext.request.servletPath, '/enregistrement') && requestScope[javax.servlet.forward.servlet_path'] ne '/enregistrement/' && !fn:contains(pageContext.request.servletPath, 'panier') && requestScope['javax.servlet.forward.servlet_path'] ne '/panier' }">
+     <c:if test="${!empty panier && panier.nbItems != 0 && !fn contains (pageContext.request.servletPath, '/enregistrement') && requestScope[jakarta.servlet.forward.servlet_path'] ne '/enregistrement/' && !fn:contains(pageContext.request.servletPath, 'panier') && requestScope['jakarta.servlet.forward.servlet_path'] ne '/panier' }">
       <a href="<c:url value='enregistrement'/ " class="bulle" >Terminer les achats</a>
      </c:if>
     </div>

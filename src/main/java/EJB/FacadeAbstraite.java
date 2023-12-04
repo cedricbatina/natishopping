@@ -1,11 +1,11 @@
 package EJB;
 
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 
 public abstract class FacadeAbstraite<T> {
   private Class<T> classeEntite;
@@ -62,10 +62,10 @@ public abstract class FacadeAbstraite<T> {
 
 /*
  * public List<T> findRange(int[] etendue) {
- * javax.persistence.criteria.CriteriaQuery cq =
+ * jakarta.persistence.criteria.CriteriaQuery cq =
  * getEntityManager().getCriteriaBuilder().createQuery();
  * cq.select(cq.from(classeEntite));
- * javax.persistence.Query q = getEntityManager()
+ * jakarta.persistence.Query q = getEntityManager()
  * .createQuery(cq);
  * q.setMaxResults(etendue[1] - etendue[0]);
  * q.setFirstResult(etendue[0]);
@@ -73,15 +73,15 @@ public abstract class FacadeAbstraite<T> {
  * }
  * 
  * public int count() {
- * javax.persistence.criteria.CriteriaQuery cq =
+ * jakarta.persistence.criteria.CriteriaQuery cq =
  * getEntityManager().getCriteriaBuilder().createQuery();
- * javax.persistence.criteria.Root<T> rt = cq.from(classeEntite);
+ * jakarta.persistence.criteria.Root<T> rt = cq.from(classeEntite);
  * cq.select(getEntityManager().getCriteriaBuilder().count(rt));
- * javax.persistence.Query q = getEntityManager().createQuery(cq);
+ * jakarta.persistence.Query q = getEntityManager().createQuery(cq);
  * return ((long) q.getSingleResult()).intValue();
  * }
  * * public List<T> findAll() {
- * javax.persistence.criteria.CriteriaQuery cq =
+ * jakarta.persistence.criteria.CriteriaQuery cq =
  * getEntityManager().getCriteriaBuilder().createQuery();
  * cq.select(cq.from(classeEntite));
  * return getEntityManager().createQuery(cq).getResultList();
